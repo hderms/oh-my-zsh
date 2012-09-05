@@ -3,7 +3,7 @@ function virtualenv_info {
 }
 
 function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '○' && return
+    git branch >/dev/null 2>/dev/null && echo 'λ' && return
     echo '○'
 }
 
@@ -32,4 +32,4 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$FG[202]%}✘✘✘"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$FG[040]%}✔"
 
-RPROMPT='!%{%B%F{cyan}%}%!%{%f%k%b%}::%n@%m%{$reset_color%}%'
+RPROMPT='!%{%B%F{cyan}%}%!%{%f%k%b%}::%n@%m%{$reset_color%}'
