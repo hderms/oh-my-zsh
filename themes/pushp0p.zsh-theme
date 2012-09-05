@@ -4,7 +4,6 @@ function virtualenv_info {
 
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo 'λ' && return
-    echo '○'
 }
 
 function box_name {
@@ -25,7 +24,7 @@ local git_info='$(git_prompt_info)'
 
 
 PROMPT="╭─%{$FG[040]%}%n%{$reset_color%} %{$FG[239]%}at%{$reset_color%} %{$FG[033]%}$(box_name)%{$reset_color%} %{$FG[239]%}in%{$reset_color%} %{$terminfo[bold]$FG[226]%}${current_dir}%{$reset_color%}${git_info} %{$FG[239]%}
-╰─%{$FG[033]%}$(virtualenv_info)$(prompt_char) "
+╰─%{$FG[033]%}$(virtualenv_info)$(prompt_char) %{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$FG[239]%}on%{$reset_color%} %{$fg[255]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
