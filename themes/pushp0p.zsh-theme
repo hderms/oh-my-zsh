@@ -1,8 +1,8 @@
 # -----------------------------------------------------------------------------
-#          FILE: smt.zsh-theme
-#   DESCRIPTION: oh-my-zsh theme file, based on dogenpunk by Matthew Nelson.
+#          FILE: pushp0p.zsh-theme
+#   DESCRIPTION: oh-my-zsh theme file, based on smt by Stephen Tudor which is based on dogenpunk by Matthew Nelson.
 #        AUTHOR: Stephen Tudor (stephen@tudorstudio.com
-#       VERSION: 0.1
+#       VERSION: 0.0.1
 #    SCREENSHOT: coming soon
 # -----------------------------------------------------------------------------
 
@@ -21,15 +21,16 @@ ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✖"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
+TIME="%(?.%{$fg[green]%}.%{$fg[red]%})%*%{$reset_color%}"
+
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE="➤ %{$fg_bold[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%}"
 
 function prompt_char() {
-  git branch >/dev/null 2>/dev/null && echo "%{$fg[green]%}±%{$reset_color%}" && return
-  hg root >/dev/null 2>/dev/null && echo "%{$fg_bold[red]%}☿%{$reset_color%}" && return
-  echo "%{$fg[cyan]%}◯%{$reset_color%}"
+  git branch >/dev/null 2>/dev/null && echo "%{$fg[green]%}♐%{$reset_color%}" && return
+  echo "%{$fg[cyan]%}λ%{$reset_color%}"
 }
 
 # Colors vary depending on time lapsed.
@@ -85,7 +86,7 @@ function git_time_since_commit() {
 }
 
 PROMPT='
-%{$fg[blue]%}%m%{$reset_color%} 福 %{$fg[cyan]%}%~ %{$reset_color%}$(git_prompt_short_sha)$(git_prompt_info)
-%{$fg[red]%}%!%{$reset_color%} $(prompt_char) : '
+%{$fg_bold[green]%}%m%{$reset_color%} %{$fg[cyan]%}%~%{$reset_color%}$(git_prompt_short_sha)$(git_prompt_info)
+%{$fg_bold[white]%}%!%{$reset_color%} $(prompt_char) : '
 
 RPROMPT='${return_status}$(git_time_since_commit)$(git_prompt_status)%{$reset_color%}'

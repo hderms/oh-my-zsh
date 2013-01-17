@@ -40,7 +40,7 @@ done
 
 # Load and run compinit
 autoload -U compinit
-compinit -i
+compinit -i 
 
 
 # Load all of the plugins that were defined in ~/.zshrc
